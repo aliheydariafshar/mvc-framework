@@ -50,3 +50,13 @@ function flashExists($name): bool
 {
     return isset($_SESSION['temporary_flash'][$name]);
 }
+
+function allFlashes()
+{
+    if (isset($_SESSION['temporary_flash'])) {
+        $temporary = $_SESSION['temporary_flash'];
+        unset($_SESSION['temporary_flash']);
+        return $temporary;
+    }
+    return false;
+}
