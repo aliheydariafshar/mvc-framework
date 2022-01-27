@@ -45,3 +45,8 @@ function flash($name, $message = null)
 
     $_SESSION['flash'][$name] = $message;
 }
+
+function flashExists($name): bool
+{
+    return isset($_SESSION['temporary_flash'][$name]);
+}
