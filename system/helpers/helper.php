@@ -60,3 +60,32 @@ function allFlashes()
     }
     return false;
 }
+
+function error($name, $message = null)
+{
+    if (empty($message)) {
+        if (isset($_SESSION['temporary_error'][$name])) {
+            $temporary = $_SESSION['temporary_error'][$name];
+            unset($_SESSION['temporary_error'][$name]);
+            return $temporary;
+        }
+        return false;
+    }
+
+    $_SESSION['error'][$name] = $message;
+}
+
+function errorExists($name): bool
+{
+    return isset($_SESSION['temporary_error'][$name]);
+}
+
+function allErrors()
+{
+    if (isset($_SESSION['temporary_error'])) {
+        $temporary = $_SESSION['temporary_error'];
+        unset($_SESSION['temporary_error']);
+        return $temporary;
+    }
+    return false;
+}
