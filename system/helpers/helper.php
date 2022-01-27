@@ -31,3 +31,17 @@ function old($name)
     }
     return null;
 }
+
+function flash($name, $message = null)
+{
+    if (empty($message)) {
+        if (isset($_SESSION['temporary_flash'][$name])) {
+            $temporary = $_SESSION['temporary_flash'][$name];
+            unset($_SESSION['temporary_flash'][$name]);
+            return $temporary;
+        }
+        return false;
+    }
+
+    $_SESSION['flash'][$name] = $message;
+}
