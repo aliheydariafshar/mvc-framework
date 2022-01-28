@@ -114,3 +114,8 @@ function asset($src)
 {
     return currentDomain() . '/' . trim($src, '/ ');
 }
+
+function url($url)
+{
+    return currentDomain() . '/' . trim($url, '/ ');
+}
