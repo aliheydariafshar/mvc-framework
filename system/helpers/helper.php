@@ -109,3 +109,8 @@ function back()
 {
     isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : null;
 }
+
+function asset($src)
+{
+    return currentDomain() . '/' . trim($src, '/ ');
+}
