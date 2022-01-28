@@ -107,7 +107,8 @@ function redirect($url)
 
 function back()
 {
-    isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : null;
+    $http_referer = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : null;
+    redirect($http_referer);
 }
 
 function asset($src)
