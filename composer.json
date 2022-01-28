@@ -1,6 +1,7 @@
 {
   "require": {
-    "ext-pdo": "*"
+    "ext-pdo": "*",
+    "ext-openssl": "*"
   },
   "autoload": {
     "psr-4": {
