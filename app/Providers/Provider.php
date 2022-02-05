@@ -4,7 +4,7 @@
 namespace App\Providers;
 
 
-class Provider
+abstract class Provider
 {
-
+    abstract public function boot();
 }
